@@ -273,11 +273,12 @@ def order_api_node(state: AgentState) -> AgentState:
             )
             conn.commit()
         final_message_content = (
-            f"Your order is placed Order ID: {order_response.order_id} \n\n---\n\n"
+            f"**✅ Your order is placed, Order ID: {order_response.order_id}** \n\n --- \n\n"
             f"You will need this Order ID to collect your Order! \n\n"
             f"Total Price: {order_response.total_price} EUR \n\n"
-            f"Please have patience, your order will be ready soon! \n\n"
-            f"Thank you for choosing our Boba Tea AI service! Enjoy your drink!"
+            f"Please have patience, your order will be ready in 2 minutes! \n\n"
+            f"Thank you for choosing our Boba Tea AI 🧋 service! \n\n"
+            f"Enjoy your drink!😋"
         )
     elif approval_status == ApprovalStatus.REJECTED and order_response:
         # Update the order status in the database to REJECTED
@@ -293,8 +294,8 @@ def order_api_node(state: AgentState) -> AgentState:
             )
             conn.commit()
         final_message_content = (
-            f"Your order Order ID: {order_response.order_id} of Price {order_response.total_price} EUR has been cancelled, you will not be charged.\n\n"
-            f"Thank you for choosing our Boba Tea AI service!"
+            f"**✅ Your order Order ID: {order_response.order_id} of Price {order_response.total_price} EUR has been cancelled, you will not be charged.**\n\n"
+            f"😋 Thank you for choosing our Boba Tea AI 🧋 service!"
         )
     else:
         final_message_content = "No valid order to process."
