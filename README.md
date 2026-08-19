@@ -31,13 +31,20 @@ An interactive boba tea ordering assistant built with LangGraph and OpenAI.
    OPENAI_API_KEY=your-key-here
    ```
 
-3. Start the assistant:
+3. Seed the **sqlite3** database:
 
    ```bash
-   uv run main.py
+   uv run python -m app.database
    ```
 
-4. Type your order or ask about the menu. Approve or reject the order when prompted.
+4. Start the assistant:
+
+   ```bash
+   uv run python -m main
+   ```
+
+5. **Type your order** or **ask about the menu** directly on the **CLI**. 
+**Approve** or **reject** the order when prompted.
 
 Type `exit` or `quit` at any prompt to leave.
 
